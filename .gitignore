@@ -1,0 +1,5 @@
+node_modules/
+.image-notes/
+*.log
+.DS_Store
+.image-notes/

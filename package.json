@@ -1,0 +1,73 @@
+{
+  "name": "@gyanpark/dsh-image-notes",
+  "version": "1.0.0",
+  "description": "Give any model in DeepSeek Harness eyes: reads pasted or attached images with a local Ollama vision model, one by one, and saves notes the selected model can use",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "skills",
+    "install",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "ollama",
+    "vision",
+    "screenshot",
+    "skill",
+    "local-llm"
+  ],
+  "license": "MIT",
+  "author": "GyanPark Technologies <support@gyanpark.com> (https://gyanpark.com)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gyanpark/dsh-image-notes.git"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4.0.0-alpha.1",
+    "@deepseek-ai/dsh-skill": ">=0.2.0-alpha.1",
+    "@deepseek-ai/schemastery": ">=3.0.0-alpha.1"
+  },
+  "disclosure": {
+    "cloud": false,
+    "network": [
+      "local Ollama API (default http://127.0.0.1:11434)"
+    ],
+    "offlineMode": true,
+    "apiKeys": [],
+    "permissions": [
+      "file-system:read Harness attachment store",
+      "file-system:write <workspace>/.image-notes",
+      "process:launch-node"
+    ],
+    "jurisdiction": [],
+    "retention": "workspace"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "homepage": "https://github.com/gyanpark/dsh-image-notes#readme",
+  "bugs": {
+    "url": "https://github.com/gyanpark/dsh-image-notes/issues"
+  },
+  "scripts": {
+    "test": "node test/run.mjs",
+    "check": "node --check lib/index.js && node --check skills/image-notes/image-notes.mjs"
+  }
+}

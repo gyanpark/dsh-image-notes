@@ -1,0 +1,10 @@
+# @gyanpark/dsh-image-notes bundle layer: registers the bundled "image-notes" skill.
+# Applied when a profile lists this package in its dsh.profile.bundles (dsh plugin add does that).
+# Optional config (all have defaults):
+#   ollamaHost: http://127.0.0.1:11434
+#   model: ""        # force a vision model; empty = smallest installed model with vision capability
+#   lang: ""         # notes language; empty = English
+#   node: ""         # absolute Node executable for the script; empty = auto
+- insert:
+    - id: image-notes
+      name: '@gyanpark/dsh-image-notes'
